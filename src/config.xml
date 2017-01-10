@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<widget xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="CoNWeT" name="youtube-browser" version="3.0">
+  <details>
+    <title>YouTube Browser</title>
+    <email>aarranz@conwet.com</email>
+    <image>images/catalogue.png</image>
+    <description>This widget lets you to browse youtube videos from a predefined list of channels (currently: Popular on Youtube, Music, Sports, Games and Movies). This widget can also perform keyword searches on youtube if connected to other widgets/operators by wiring.</description>
+    <doc>http://conwet.fi.upm.es/docs/display/wirecloud/Youtube+Video+Search</doc>
+    <authors>aarranz</authors>
+  </details>
+  <preferences>
+    <preference name="channel" type="list" label="Default channel" description="default channel" default="0">
+      <option label="Popular on YouTube" value="0"/>
+      <option label="Music" value="1"/>
+      <option label="Sports" value="2"/>
+      <option label="Gaming" value="3"/>
+      <option label="Movies" value="4"/>
+    </preference>
+    <preference name="apikey" type="text" label="API Key" description="API Key for accessing the YouTube API" />
+  </preferences>
+  <wiring>
+    <outputendpoint name="video" type="text" label="Video clicked" description="Video clicked in the user interface of the widget" friendcode="youtube_video"/>
+    <inputendpoint name="keyword" type="text" label="Search by keyword" description="Keyword to search in Youtube" actionlabel="YouTube Search" friendcode="keyword"/>
+  </wiring>
+  <contents src="index.html" contenttype="application/xhtml+xml" useplatformstyle="true"/>
+  <rendering height="33" width="6"/>
+</widget>
